@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: cohabit_user
+      POSTGRES_PASSWORD: cohabit_pass
+      POSTGRES_DB: cohabit_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
